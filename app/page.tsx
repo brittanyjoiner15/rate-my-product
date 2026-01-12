@@ -26,9 +26,11 @@ export default function Home() {
             from real humans in your target audience—with clear issues, priorities, and what to fix.
           </p>
           <div className="flex gap-4 justify-center">
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-              Submit Your Product
-            </button>
+            <a href="https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r">
+              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                Submit Your Product
+              </button>
+            </a>
             <button className="bg-white text-gray-700 px-8 py-3 rounded-lg font-semibold border-2 border-gray-300 hover:bg-gray-50 transition">
               View Pricing
             </button>
@@ -160,16 +162,16 @@ export default function Home() {
               <div className="mb-6">
                 <span className="text-4xl font-bold text-gray-900">$99</span>
               </div>
-              <p className="text-gray-600 mb-6">One user tests your product</p>
+              <p className="text-gray-600 mb-6">Full onboarding and product feedback loop</p>
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">1 user from your target audience</span>
+                  <span className="text-gray-700">Britt tests your product</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">Screen recording</span>
+                  <span className="text-gray-700">10-15 min Screen recording</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
@@ -292,9 +294,11 @@ export default function Home() {
           <p className="text-xl text-blue-100 mb-8">
             Find the issues that'll tank your launch before you hit publish.
           </p>
-          <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition text-lg">
-            Submit Your Product
-          </button>
+          <a href="https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r">
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition text-lg">
+              Submit Your Product
+            </button>
+          </a>
         </div>
       </section>
 

@@ -83,7 +83,7 @@ export default function MeetTheTesters() {
           <p className="text-xl text-blue-100 mb-8">
             We match your product with testers who'd actually be your users.
           </p>
-          <a href="/">
+          <a href="https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r">
             <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition text-lg">
               Submit Your Product
             </button>
