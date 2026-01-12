@@ -1,15 +1,59 @@
+'use client';
+
+import { PageViewTracker } from '@/lib/components/page-view-tracker';
+import { ScrollTracker } from '@/lib/components/scroll-tracker';
+import { TrackedLink } from '@/lib/components/tracked-link';
+import { TrackedButton } from '@/lib/components/tracked-button';
+import { ANALYTICS_EVENTS } from '@/lib/analytics';
+
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <PageViewTracker pageTitle="Home" />
+      <ScrollTracker pageTitle="Home" />
+
       {/* Header */}
       <header className="border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold text-blue-600">Rate My Product</h1>
             <nav className="flex gap-6">
-              <a href="#how-it-works" className="text-gray-600 hover:text-gray-900">How It Works</a>
-              <a href="/meet-the-testers" className="text-gray-600 hover:text-gray-900">Meet the Testers</a>
-              <a href="#pricing" className="text-gray-600 hover:text-gray-900">Pricing</a>
+              <TrackedLink
+                href="#how-it-works"
+                eventName={ANALYTICS_EVENTS.NAV_LINK_CLICKED}
+                eventProperties={{
+                  link_text: 'How It Works',
+                  link_destination: '#how-it-works',
+                  link_type: 'navigation',
+                }}
+                className="text-gray-600 hover:text-gray-900"
+              >
+                How It Works
+              </TrackedLink>
+              <TrackedLink
+                href="/meet-the-testers"
+                eventName={ANALYTICS_EVENTS.NAV_LINK_CLICKED}
+                eventProperties={{
+                  link_text: 'Meet the Testers',
+                  link_destination: '/meet-the-testers',
+                  link_type: 'navigation',
+                }}
+                className="text-gray-600 hover:text-gray-900"
+              >
+                Meet the Testers
+              </TrackedLink>
+              <TrackedLink
+                href="#pricing"
+                eventName={ANALYTICS_EVENTS.NAV_LINK_CLICKED}
+                eventProperties={{
+                  link_text: 'Pricing',
+                  link_destination: '#pricing',
+                  link_type: 'navigation',
+                }}
+                className="text-gray-600 hover:text-gray-900"
+              >
+                Pricing
+              </TrackedLink>
             </nav>
           </div>
         </div>
@@ -26,11 +70,27 @@ export default function Home() {
             from real humans in your target audience—with clear issues, priorities, and what to fix.
           </p>
           <div className="flex gap-4 justify-center">
-            <a href="https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r">
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+            <TrackedLink
+              href="https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r"
+              eventName={ANALYTICS_EVENTS.STRIPE_CHECKOUT_CLICKED}
+              eventProperties={{
+                cta_location: 'hero',
+                cta_text: 'Get feedback in 48 hours',
+                destination_url: 'https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r',
+              }}
+            >
+              <TrackedButton
+                eventName={ANALYTICS_EVENTS.CTA_CLICKED}
+                eventProperties={{
+                  cta_location: 'hero',
+                  cta_text: 'Get feedback in 48 hours',
+                  destination_url: 'https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r',
+                }}
+                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+              >
                 Get feedback in 48 hours
-              </button>
-            </a>
+              </TrackedButton>
+            </TrackedLink>
           </div>
           <p className="text-gray-600 mt-4 text-lg">
             <em>Early-January price: $99 one time fee. Limited slots.</em>
@@ -87,9 +147,19 @@ export default function Home() {
               <p className="text-lg text-gray-600 mb-8">
                 Because you don't need a $20k research report written by product people.
                 You need to know what actual users trip over so you can ship fixes this week.{' '}
-                <a href="/meet-the-testers" className="text-blue-600 hover:text-blue-700 font-semibold underline">
+                <TrackedLink
+                  href="/meet-the-testers"
+                  eventName={ANALYTICS_EVENTS.NAV_LINK_CLICKED}
+                  eventProperties={{
+                    link_text: 'Meet your reviewer',
+                    link_destination: '/meet-the-testers',
+                    link_type: 'inline',
+                    section: 'benefits',
+                  }}
+                  className="text-blue-600 hover:text-blue-700 font-semibold underline"
+                >
                   Meet your reviewer →
-                </a>
+                </TrackedLink>
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start">
@@ -186,11 +256,29 @@ export default function Home() {
                   <span className="text-gray-700">48-hour delivery</span>
                 </li>
               </ul>
-              <a href="https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r" target="_blank" rel="noopener noreferrer">
-                <button className="w-full bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold border-2 border-blue-600 hover:bg-blue-50 transition">
+              <TrackedLink
+                href="https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r"
+                eventName={ANALYTICS_EVENTS.STRIPE_CHECKOUT_CLICKED}
+                eventProperties={{
+                  cta_location: 'pricing',
+                  cta_text: 'Get Started',
+                  destination_url: 'https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r',
+                }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <TrackedButton
+                  eventName={ANALYTICS_EVENTS.CTA_CLICKED}
+                  eventProperties={{
+                    cta_location: 'pricing',
+                    cta_text: 'Get Started',
+                    destination_url: 'https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r',
+                  }}
+                  className="w-full bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold border-2 border-blue-600 hover:bg-blue-50 transition"
+                >
                   Get Started
-                </button>
-              </a>
+                </TrackedButton>
+              </TrackedLink>
             </div>
 
             {/* TEMPORARILY HIDDEN - Pro Plan - Most Popular */}
@@ -294,11 +382,27 @@ export default function Home() {
           <p className="text-xl text-blue-100 mb-8">
             Find the issues that'll tank your launch before you hit publish.
           </p>
-          <a href="https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r">
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition text-lg">
+          <TrackedLink
+            href="https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r"
+            eventName={ANALYTICS_EVENTS.STRIPE_CHECKOUT_CLICKED}
+            eventProperties={{
+              cta_location: 'bottom',
+              cta_text: 'Submit Your Product',
+              destination_url: 'https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r',
+            }}
+          >
+            <TrackedButton
+              eventName={ANALYTICS_EVENTS.CTA_CLICKED}
+              eventProperties={{
+                cta_location: 'bottom',
+                cta_text: 'Submit Your Product',
+                destination_url: 'https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r',
+              }}
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition text-lg"
+            >
               Submit Your Product
-            </button>
-          </a>
+            </TrackedButton>
+          </TrackedLink>
         </div>
       </section>
 
@@ -315,19 +419,123 @@ export default function Home() {
             <div>
               <h4 className="text-white font-semibold mb-4">Product</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#how-it-works" className="hover:text-white">How It Works</a></li>
-                <li><a href="/meet-the-testers" className="hover:text-white">Meet the Testers</a></li>
-                <li><a href="#pricing" className="hover:text-white">Pricing</a></li>
-                <li><a href="#" className="hover:text-white">FAQ</a></li>
+                <li>
+                  <TrackedLink
+                    href="#how-it-works"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'How It Works',
+                      link_destination: '#how-it-works',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    How It Works
+                  </TrackedLink>
+                </li>
+                <li>
+                  <TrackedLink
+                    href="/meet-the-testers"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'Meet the Testers',
+                      link_destination: '/meet-the-testers',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    Meet the Testers
+                  </TrackedLink>
+                </li>
+                <li>
+                  <TrackedLink
+                    href="#pricing"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'Pricing',
+                      link_destination: '#pricing',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    Pricing
+                  </TrackedLink>
+                </li>
+                <li>
+                  <TrackedLink
+                    href="#"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'FAQ',
+                      link_destination: '#',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    FAQ
+                  </TrackedLink>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white">About</a></li>
-                <li><a href="mailto:brittanyjoiner15@gmail.com" className="hover:text-white">Contact</a></li>
-                <li><a href="#" className="hover:text-white">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
+                <li>
+                  <TrackedLink
+                    href="#"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'About',
+                      link_destination: '#',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    About
+                  </TrackedLink>
+                </li>
+                <li>
+                  <TrackedLink
+                    href="mailto:brittanyjoiner15@gmail.com"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'Contact',
+                      link_destination: 'mailto:brittanyjoiner15@gmail.com',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    Contact
+                  </TrackedLink>
+                </li>
+                <li>
+                  <TrackedLink
+                    href="#"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'Terms of Service',
+                      link_destination: '#',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    Terms of Service
+                  </TrackedLink>
+                </li>
+                <li>
+                  <TrackedLink
+                    href="#"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'Privacy Policy',
+                      link_destination: '#',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    Privacy Policy
+                  </TrackedLink>
+                </li>
               </ul>
             </div>
           </div>

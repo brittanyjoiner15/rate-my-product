@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mixpanel-browser": "^2.73.0",
     "next": "^16.1.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"

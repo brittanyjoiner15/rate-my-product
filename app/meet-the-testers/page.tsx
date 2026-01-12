@@ -1,3 +1,11 @@
+'use client';
+
+import { PageViewTracker } from '@/lib/components/page-view-tracker';
+import { ScrollTracker } from '@/lib/components/scroll-tracker';
+import { TrackedLink } from '@/lib/components/tracked-link';
+import { TrackedButton } from '@/lib/components/tracked-button';
+import { ANALYTICS_EVENTS } from '@/lib/analytics';
+
 export default function MeetTheTesters() {
   const testers = [
     {
@@ -17,17 +25,61 @@ export default function MeetTheTesters() {
 
   return (
     <div className="min-h-screen">
+      <PageViewTracker pageTitle="Meet the Testers" />
+      <ScrollTracker pageTitle="Meet the Testers" />
+
       {/* Header */}
       <header className="border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
-            <a href="/">
+            <TrackedLink
+              href="/"
+              eventName={ANALYTICS_EVENTS.NAV_LINK_CLICKED}
+              eventProperties={{
+                link_text: 'Rate My Product',
+                link_destination: '/',
+                link_type: 'navigation',
+              }}
+            >
               <h1 className="text-2xl font-bold text-blue-600">Rate My Product</h1>
-            </a>
+            </TrackedLink>
             <nav className="flex gap-6">
-              <a href="/" className="text-gray-600 hover:text-gray-900">Home</a>
-              <a href="/#how-it-works" className="text-gray-600 hover:text-gray-900">How It Works</a>
-              <a href="/#pricing" className="text-gray-600 hover:text-gray-900">Pricing</a>
+              <TrackedLink
+                href="/"
+                eventName={ANALYTICS_EVENTS.NAV_LINK_CLICKED}
+                eventProperties={{
+                  link_text: 'Home',
+                  link_destination: '/',
+                  link_type: 'navigation',
+                }}
+                className="text-gray-600 hover:text-gray-900"
+              >
+                Home
+              </TrackedLink>
+              <TrackedLink
+                href="/#how-it-works"
+                eventName={ANALYTICS_EVENTS.NAV_LINK_CLICKED}
+                eventProperties={{
+                  link_text: 'How It Works',
+                  link_destination: '/#how-it-works',
+                  link_type: 'navigation',
+                }}
+                className="text-gray-600 hover:text-gray-900"
+              >
+                How It Works
+              </TrackedLink>
+              <TrackedLink
+                href="/#pricing"
+                eventName={ANALYTICS_EVENTS.NAV_LINK_CLICKED}
+                eventProperties={{
+                  link_text: 'Pricing',
+                  link_destination: '/#pricing',
+                  link_type: 'navigation',
+                }}
+                className="text-gray-600 hover:text-gray-900"
+              >
+                Pricing
+              </TrackedLink>
             </nav>
           </div>
         </div>
@@ -76,11 +128,29 @@ export default function MeetTheTesters() {
                   </div>
                 </div>
                 <div className="text-center mt-6">
-                  <a href={tester.link} target="_blank" rel="noopener noreferrer">
-                    <button className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+                  <TrackedLink
+                    href={tester.link}
+                    eventName={ANALYTICS_EVENTS.TESTER_PROFILE_VIEWED}
+                    eventProperties={{
+                      tester_name: tester.name,
+                      tester_role: tester.role,
+                      profile_url: tester.link,
+                    }}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <TrackedButton
+                      eventName={ANALYTICS_EVENTS.TESTER_PROFILE_VIEWED}
+                      eventProperties={{
+                        tester_name: tester.name,
+                        tester_role: tester.role,
+                        profile_url: tester.link,
+                      }}
+                      className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition"
+                    >
                       View Profile
-                    </button>
-                  </a>
+                    </TrackedButton>
+                  </TrackedLink>
                 </div>
               </div>
             ))}
@@ -112,11 +182,28 @@ export default function MeetTheTesters() {
               </p>
             </div>
             <div className="mt-6 text-center">
-              <a href="https://britt.fillout.com/t/pPyrN5Crzjus" target="_blank">
-                <button className="bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+              <TrackedLink
+                href="https://britt.fillout.com/t/pPyrN5Crzjus"
+                eventName={ANALYTICS_EVENTS.TESTER_APPLICATION_CLICKED}
+                eventProperties={{
+                  link_text: 'Apply to be a tester',
+                  link_destination: 'https://britt.fillout.com/t/pPyrN5Crzjus',
+                  link_type: 'inline',
+                }}
+                target="_blank"
+              >
+                <TrackedButton
+                  eventName={ANALYTICS_EVENTS.TESTER_APPLICATION_CLICKED}
+                  eventProperties={{
+                    link_text: 'Apply to be a tester',
+                    link_destination: 'https://britt.fillout.com/t/pPyrN5Crzjus',
+                    link_type: 'inline',
+                  }}
+                  className="bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+                >
                   Apply to be a tester
-                </button>
-              </a>
+                </TrackedButton>
+              </TrackedLink>
             </div>
           </div>
         </div>
@@ -131,11 +218,27 @@ export default function MeetTheTesters() {
           <p className="text-xl text-blue-100 mb-8">
             We match your product with testers who'd actually be your users.
           </p>
-          <a href="https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r">
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition text-lg">
+          <TrackedLink
+            href="https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r"
+            eventName={ANALYTICS_EVENTS.STRIPE_CHECKOUT_CLICKED}
+            eventProperties={{
+              cta_location: 'testers_page',
+              cta_text: 'Submit Your Product',
+              destination_url: 'https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r',
+            }}
+          >
+            <TrackedButton
+              eventName={ANALYTICS_EVENTS.CTA_CLICKED}
+              eventProperties={{
+                cta_location: 'testers_page',
+                cta_text: 'Submit Your Product',
+                destination_url: 'https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r',
+              }}
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition text-lg"
+            >
               Submit Your Product
-            </button>
-          </a>
+            </TrackedButton>
+          </TrackedLink>
         </div>
       </section>
 
@@ -152,19 +255,123 @@ export default function MeetTheTesters() {
             <div>
               <h4 className="text-white font-semibold mb-4">Product</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="/#how-it-works" className="hover:text-white">How It Works</a></li>
-                <li><a href="/#benefits" className="hover:text-white">Why Us</a></li>
-                <li><a href="/#pricing" className="hover:text-white">Pricing</a></li>
-                <li><a href="#" className="hover:text-white">FAQ</a></li>
+                <li>
+                  <TrackedLink
+                    href="/#how-it-works"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'How It Works',
+                      link_destination: '/#how-it-works',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    How It Works
+                  </TrackedLink>
+                </li>
+                <li>
+                  <TrackedLink
+                    href="/#benefits"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'Why Us',
+                      link_destination: '/#benefits',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    Why Us
+                  </TrackedLink>
+                </li>
+                <li>
+                  <TrackedLink
+                    href="/#pricing"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'Pricing',
+                      link_destination: '/#pricing',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    Pricing
+                  </TrackedLink>
+                </li>
+                <li>
+                  <TrackedLink
+                    href="#"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'FAQ',
+                      link_destination: '#',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    FAQ
+                  </TrackedLink>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white">About</a></li>
-                <li><a href="mailto:brittanyjoiner15@gmail.com" className="hover:text-white">Contact</a></li>
-                <li><a href="#" className="hover:text-white">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
+                <li>
+                  <TrackedLink
+                    href="#"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'About',
+                      link_destination: '#',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    About
+                  </TrackedLink>
+                </li>
+                <li>
+                  <TrackedLink
+                    href="mailto:brittanyjoiner15@gmail.com"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'Contact',
+                      link_destination: 'mailto:brittanyjoiner15@gmail.com',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    Contact
+                  </TrackedLink>
+                </li>
+                <li>
+                  <TrackedLink
+                    href="#"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'Terms of Service',
+                      link_destination: '#',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    Terms of Service
+                  </TrackedLink>
+                </li>
+                <li>
+                  <TrackedLink
+                    href="#"
+                    eventName={ANALYTICS_EVENTS.FOOTER_LINK_CLICKED}
+                    eventProperties={{
+                      link_text: 'Privacy Policy',
+                      link_destination: '#',
+                      link_type: 'footer',
+                    }}
+                    className="hover:text-white"
+                  >
+                    Privacy Policy
+                  </TrackedLink>
+                </li>
               </ul>
             </div>
           </div>
