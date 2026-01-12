@@ -6,17 +6,11 @@ export const ANALYTICS_EVENTS = {
   // Engagement events
   SCROLL_DEPTH_REACHED: 'Scroll Depth Reached',
 
-  // Navigation events
-  NAV_LINK_CLICKED: 'Navigation Link Clicked',
-  FOOTER_LINK_CLICKED: 'Footer Link Clicked',
-
-  // CTA events
-  CTA_CLICKED: 'CTA Clicked',
-  STRIPE_CHECKOUT_CLICKED: 'Stripe Checkout Clicked',
+  // Universal click event
+  CLICK: 'Click',
 
   // Tester page events
   TESTER_PROFILE_VIEWED: 'Tester Profile Viewed',
-  TESTER_APPLICATION_CLICKED: 'Tester Application Clicked',
 } as const;
 
 // Event property types
@@ -33,17 +27,13 @@ export interface ScrollDepthProperties {
   time_to_depth_seconds: number;
 }
 
-export interface CTAClickedProperties {
-  cta_location: 'hero' | 'pricing' | 'bottom' | 'testers_page';
-  cta_text: string;
-  destination_url: string;
-}
-
-export interface LinkClickedProperties {
-  link_text: string;
-  link_destination: string;
-  link_type: 'navigation' | 'footer' | 'inline';
-  section?: string;
+export interface ClickProperties {
+  element_type: 'link' | 'button' | 'cta';
+  element_text: string;
+  destination_url?: string;
+  location: string; // e.g., 'hero', 'pricing', 'bottom', 'navigation', 'footer', 'testers_page'
+  section?: string; // Additional context about where on the page
+  link_type?: 'navigation' | 'footer' | 'inline' | 'external' | 'cta' | 'stripe_checkout';
 }
 
 export interface TesterProfileProperties {
@@ -56,7 +46,6 @@ export interface TesterProfileProperties {
 export type AnalyticsEventProperties =
   | PageViewedProperties
   | ScrollDepthProperties
-  | CTAClickedProperties
-  | LinkClickedProperties
+  | ClickProperties
   | TesterProfileProperties
   | Record<string, unknown>;

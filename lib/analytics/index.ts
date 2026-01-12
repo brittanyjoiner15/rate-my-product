@@ -9,8 +9,7 @@ export { ANALYTICS_EVENTS } from './events';
 export type {
   PageViewedProperties,
   ScrollDepthProperties,
-  CTAClickedProperties,
-  LinkClickedProperties,
+  ClickProperties,
   TesterProfileProperties,
   AnalyticsEventProperties,
 } from './events';

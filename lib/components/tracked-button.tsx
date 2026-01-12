@@ -1,18 +1,15 @@
 'use client';
 
 import { ButtonHTMLAttributes } from 'react';
-import { useAnalytics } from '@/lib/analytics';
-import { AnalyticsEventProperties } from '@/lib/analytics';
+import { useAnalytics, ANALYTICS_EVENTS, ClickProperties } from '@/lib/analytics';
 
 interface TrackedButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  eventName: string;
-  eventProperties?: AnalyticsEventProperties;
+  trackingProps: Omit<ClickProperties, 'element_type'>;
   children: React.ReactNode;
 }
 
 export function TrackedButton({
-  eventName,
-  eventProperties,
+  trackingProps,
   onClick,
   children,
   ...props
@@ -20,8 +17,11 @@ export function TrackedButton({
   const { track } = useAnalytics();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    // Track the event
-    track(eventName, eventProperties);
+    // Track the click event with element_type automatically set to 'button'
+    track(ANALYTICS_EVENTS.CLICK, {
+      ...trackingProps,
+      element_type: 'button',
+    } as ClickProperties);
 
     // Call original onClick if provided
     onClick?.(e);
