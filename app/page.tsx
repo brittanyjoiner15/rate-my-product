@@ -8,7 +8,7 @@ export default function Home() {
             <h1 className="text-2xl font-bold text-blue-600">Rate My Product</h1>
             <nav className="flex gap-6">
               <a href="#how-it-works" className="text-gray-600 hover:text-gray-900">How It Works</a>
-              <a href="#benefits" className="text-gray-600 hover:text-gray-900">Benefits</a>
+              <a href="/meet-the-testers" className="text-gray-600 hover:text-gray-900">Meet the Testers</a>
               <a href="#pricing" className="text-gray-600 hover:text-gray-900">Pricing</a>
             </nav>
           </div>
@@ -19,11 +19,11 @@ export default function Home() {
       <section className="bg-gradient-to-b from-blue-50 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-5xl font-bold text-gray-900 mb-6">
-            Get Real Feedback From Real Users
+            Find out what's confusing, broken, or slowing users down before you launch
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Connect product builders with enthusiastic testers who provide authentic feedback,
-            screen recordings, and detailed insights to help you improve your product.
+            Skip the $20k UX agency and the generic survey takers. Get product-focused feedback
+            from real humans in your target audience—with clear issues, priorities, and what to fix.
           </p>
           <div className="flex gap-4 justify-center">
             <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
@@ -47,30 +47,27 @@ export default function Home() {
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-blue-600">1</span>
               </div>
-              <h3 className="text-xl font-semibold mb-4">Submit Your Product</h3>
+              <h3 className="text-xl font-semibold mb-4">Send us your product</h3>
               <p className="text-gray-600">
-                Builders submit their product with details about what kind of feedback they need.
-                Choose your testing criteria and select your package.
+                Share a link and tell us who you're building for. No scripts, no recruiting, no long intake forms.
               </p>
             </div>
             <div className="text-center">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-blue-600">2</span>
               </div>
-              <h3 className="text-xl font-semibold mb-4">Testers Try Your Product</h3>
+              <h3 className="text-xl font-semibold mb-4">We match real users who try it</h3>
               <p className="text-gray-600">
-                Matched testers from your target audience try your product while recording their
-                onboarding experience and documenting their thoughts.
+                People who match your target audience use your product and record what happens—no incentive-chasing survey takers.
               </p>
             </div>
             <div className="text-center">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-blue-600">3</span>
               </div>
-              <h3 className="text-xl font-semibold mb-4">Receive Detailed Feedback</h3>
+              <h3 className="text-xl font-semibold mb-4">Get actionable feedback</h3>
               <p className="text-gray-600">
-                Get video recordings of the onboarding experience plus comprehensive written
-                feedback about what works and what needs improvement.
+                Screen recordings + written critique focused on UX, clarity, friction, onboarding, and what breaks trust.
               </p>
             </div>
           </div>
@@ -83,35 +80,38 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                For Product Builders
+                Why not just hire a UX agency?
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                Stop guessing what users think. Get authentic, unfiltered feedback from real people
-                who match your target audience.
+                Because you don't need a $20k research report written by product people.
+                You need to know what actual users trip over so you can ship fixes this week.{' '}
+                <a href="/meet-the-testers" className="text-blue-600 hover:text-blue-700 font-semibold underline">
+                  Meet the testers →
+                </a>
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-xl">✓</span>
                   <span className="text-gray-700">
-                    <strong>Video Recordings:</strong> Watch real users navigate your onboarding flow
+                    <strong>Real humans, not anonymous testers.</strong> People who'd actually use your product, not doing it for $5.
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-xl">✓</span>
                   <span className="text-gray-700">
-                    <strong>Detailed Insights:</strong> Get written feedback on UX, features, and first impressions
+                    <strong>Product-focused critique.</strong> Not vague opinions—specific issues with UX, clarity, friction, and trust.
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-xl">✓</span>
                   <span className="text-gray-700">
-                    <strong>Target Audience:</strong> Feedback from users who match your ideal customer profile
+                    <strong>Actionable output.</strong> Clear priorities and concrete suggestions, not 40-slide decks.
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-xl">✓</span>
                   <span className="text-gray-700">
-                    <strong>Fast Turnaround:</strong> Receive feedback within days, not weeks
+                    <strong>Zero effort on your end.</strong> No scripts, no recruiting, no workshops. Just send a link.
                   </span>
                 </li>
               </ul>
@@ -120,20 +120,20 @@ export default function Home() {
               <h3 className="text-2xl font-semibold mb-6">What You Get</h3>
               <div className="space-y-6">
                 <div className="border-b pb-4">
-                  <p className="font-semibold text-gray-900">Screen Recording</p>
-                  <p className="text-gray-600 text-sm">Full onboarding session capture</p>
+                  <p className="font-semibold text-gray-900">Screen recordings</p>
+                  <p className="text-gray-600 text-sm">Watch exactly where users get stuck or confused</p>
                 </div>
                 <div className="border-b pb-4">
-                  <p className="font-semibold text-gray-900">Written Feedback</p>
-                  <p className="text-gray-600 text-sm">Detailed thoughts on UX and features</p>
+                  <p className="font-semibold text-gray-900">Product critique</p>
+                  <p className="text-gray-600 text-sm">UX, onboarding, clarity, trust issues—what needs fixing</p>
                 </div>
                 <div className="border-b pb-4">
-                  <p className="font-semibold text-gray-900">Pain Points</p>
-                  <p className="text-gray-600 text-sm">What confused or frustrated testers</p>
+                  <p className="font-semibold text-gray-900">Prioritized issues</p>
+                  <p className="text-gray-600 text-sm">What's breaking the experience vs. nice-to-haves</p>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">Suggestions</p>
-                  <p className="text-gray-600 text-sm">Ideas for improvement from fresh eyes</p>
+                  <p className="font-semibold text-gray-900">Concrete suggestions</p>
+                  <p className="text-gray-600 text-sm">Specific changes you can make, not generic advice</p>
                 </div>
               </div>
             </div>
@@ -146,138 +146,139 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Simple Pricing
+              Pricing
             </h2>
             <p className="text-xl text-gray-600">
-              Choose the package that fits your needs
+              Pay once, get feedback. No subscriptions or hidden fees.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="flex justify-center max-w-6xl mx-auto">
             {/* Basic Plan */}
-            <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 hover:shadow-lg transition">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Basic</h3>
+            <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 hover:shadow-lg transition max-w-md">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Single Review</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold text-gray-900">$99</span>
               </div>
-              <p className="text-gray-600 mb-6">Perfect for testing a single feature</p>
+              <p className="text-gray-600 mb-6">One user tests your product</p>
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">1 tester review</span>
+                  <span className="text-gray-700">1 user from your target audience</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">Video recording of onboarding</span>
+                  <span className="text-gray-700">Screen recording</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">Written feedback report</span>
+                  <span className="text-gray-700">Written product critique</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">Basic ratings (3 categories)</span>
+                  <span className="text-gray-700">Issues + suggestions</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">48-hour turnaround</span>
+                  <span className="text-gray-700">48-hour delivery</span>
                 </li>
               </ul>
-
-              <button className="w-full bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold border-2 border-blue-600 hover:bg-blue-50 transition">
-                Get Started
-              </button>
+              <a href="https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r" target="_blank" rel="noopener noreferrer">
+                <button className="w-full bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold border-2 border-blue-600 hover:bg-blue-50 transition">
+                  Get Started
+                </button>
+              </a>
             </div>
 
-            {/* Pro Plan - Most Popular */}
-            <div className="bg-white rounded-2xl border-2 border-blue-600 p-8 relative hover:shadow-xl transition transform md:scale-105">
+            {/* TEMPORARILY HIDDEN - Pro Plan - Most Popular */}
+            {/* <div className="bg-white rounded-2xl border-2 border-blue-600 p-8 relative hover:shadow-xl transition transform md:scale-105">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
                   MOST POPULAR
                 </span>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Pro</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Standard</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold text-gray-900">$249</span>
               </div>
-              <p className="text-gray-600 mb-6">Comprehensive feedback from multiple users</p>
+              <p className="text-gray-600 mb-6">Get patterns from 3 users</p>
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">3 tester reviews</span>
+                  <span className="text-gray-700">3 users from your target audience</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">Video recordings of onboarding</span>
+                  <span className="text-gray-700">Screen recordings</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">Detailed written feedback</span>
+                  <span className="text-gray-700">Written product critique</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">Comprehensive ratings</span>
+                  <span className="text-gray-700">Prioritized issues + suggestions</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">24-hour turnaround</span>
+                  <span className="text-gray-700">24-hour delivery</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">Tester demographics</span>
+                  <span className="text-gray-700">User demographics</span>
                 </li>
               </ul>
 
               <button className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
                 Get Started
               </button>
-            </div>
+            </div> */}
 
-            {/* Enterprise Plan */}
-            <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 hover:shadow-lg transition">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
+            {/* TEMPORARILY HIDDEN - Deep Dive Plan */}
+            {/* <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 hover:shadow-lg transition">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Deep Dive</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold text-gray-900">$599</span>
               </div>
-              <p className="text-gray-600 mb-6">Deep insights for critical launches</p>
+              <p className="text-gray-600 mb-6">Find everything before launch</p>
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">10 tester reviews</span>
+                  <span className="text-gray-700">10 users from your target audience</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">Video recordings & screen shares</span>
+                  <span className="text-gray-700">Screen recordings</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">In-depth analysis report</span>
+                  <span className="text-gray-700">Written product critique</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">Full rating breakdown</span>
+                  <span className="text-gray-700">Analysis of patterns across all users</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">12-hour turnaround</span>
+                  <span className="text-gray-700">Prioritized issues + suggestions</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">Tester demographics</span>
+                  <span className="text-gray-700">12-hour delivery</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 text-lg">✓</span>
-                  <span className="text-gray-700">Priority support</span>
+                  <span className="text-gray-700">User demographics</span>
                 </li>
               </ul>
 
               <button className="w-full bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold border-2 border-blue-600 hover:bg-blue-50 transition">
                 Get Started
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -286,10 +287,10 @@ export default function Home() {
       <section className="bg-blue-600 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Get Real User Feedback?
+            Ship with confidence
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Join product builders who are shipping better products with authentic user insights.
+            Find the issues that'll tank your launch before you hit publish.
           </p>
           <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition text-lg">
             Submit Your Product
@@ -304,14 +305,14 @@ export default function Home() {
             <div>
               <h3 className="text-white font-semibold mb-4">Rate My Product</h3>
               <p className="text-sm">
-                Get authentic user feedback to build better products. Real users, real insights, real results.
+                Find out what's confusing, broken, or slowing users down—before you launch.
               </p>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Product</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="#how-it-works" className="hover:text-white">How It Works</a></li>
-                <li><a href="#benefits" className="hover:text-white">Benefits</a></li>
+                <li><a href="/meet-the-testers" className="hover:text-white">Meet the Testers</a></li>
                 <li><a href="#pricing" className="hover:text-white">Pricing</a></li>
                 <li><a href="#" className="hover:text-white">FAQ</a></li>
               </ul>
