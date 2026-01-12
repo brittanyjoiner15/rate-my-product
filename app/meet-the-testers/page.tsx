@@ -3,8 +3,8 @@ export default function MeetTheTesters() {
     {
       name: "Britt Joiner",
       role: "Developer and Solution Arhcitext",
-      location: "Richmond, VA",
-      background: "Brittany is a full-stack developer with years of experience building 0 applications and developing low-code solutions. She loves exploring new technologies and contributing to projects.",
+      location: "Washington DC, USA",
+      background: "Brittany is a full-stack developer with years of experience building applications and developing low-code solutions. She loves exploring new technologies and contributing to projects.",
       interests: ["SaaS tools", "Low code builders", "Productivity apps"],
       image: "👩‍💻",
       link: "https://brittjoiner.com/",
@@ -70,6 +70,40 @@ export default function MeetTheTesters() {
                 </a>  
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Just Britt Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Why is it just Britt right now?
+            </h3>
+            <p className="text-gray-700 mb-4">
+              I'm starting small to validate this service and ensure every review delivers real value.
+              Britt is the perfect first tester because she has years of experience working in SaaS and
+              constantly tests low-code and productivity tools for various use cases.
+            </p>
+            <p className="text-gray-700 mb-4">
+              She regularly recommends products to improve personal and business productivity and operations,
+              so she knows exactly what makes a product intuitive, trustworthy, and worth using—and what
+              causes people to bounce.
+            </p>
+            <div className="bg-blue-50 border-l-4 border-blue-600 p-4 mt-6">
+              <p className="text-blue-900 font-semibold">
+                More testers are coming soon! As the service grows, I'll be adding more experienced
+                testers across different industries and use cases to give you diverse perspectives on your product.
+              </p>
+            </div>
+            <div className="mt-6 text-center">
+              <a href="https://britt.fillout.com/t/pPyrN5Crzjus" target="_blank">
+                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                  Apply to be a tester
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </section>
