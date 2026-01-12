@@ -2,9 +2,13 @@ export default function MeetTheTesters() {
   const testers = [
     {
       name: "Britt Joiner",
-      role: "Developer and Solution Arhcitext",
+      role: "Product-focused developer and productivity systems builder",
       location: "Washington DC, USA",
-      background: "Brittany is a full-stack developer with years of experience building applications and developing low-code solutions. She loves exploring new technologies and contributing to projects.",
+      background: [
+        "Britt Joiner is a product-focused developer who has spent years building, testing, and breaking SaaS tools, low-code platforms, and productivity systems.",
+        "She approaches reviews the same way she evaluates tools for real use. What's confusing. What breaks trust. What silently slows users down.",
+        "Because she regularly tests and recommends tools for real workflows, her feedback focuses on practical friction points. Not opinions. Not theory. Just what's getting in the user's way and what to fix first."
+      ],
       interests: ["SaaS tools", "Low code builders", "Productivity apps"],
       image: "👩‍💻",
       link: "https://brittjoiner.com/",
@@ -33,7 +37,7 @@ export default function MeetTheTesters() {
       <section className="bg-gradient-to-b from-blue-50 to-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-5xl font-bold text-gray-900 mb-6">
-            Meet the Testers
+            Your Reviewer
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Real people who actually use products like yours. Not anonymous survey takers or paid clickers—
@@ -45,29 +49,39 @@ export default function MeetTheTesters() {
       {/* Testers Grid */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex justify-center">
             {testers.map((tester, index) => (
-              <div key={index} className="bg-white rounded-xl border-2 border-gray-200 p-6 hover:shadow-lg transition">
-                <div className="text-5xl mb-4">{tester.image}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-1">{tester.name}</h3>
-                <p className="text-blue-600 font-semibold mb-2">{tester.role}</p>
-                <p className="text-sm text-gray-500 mb-4">{tester.location}</p>
-                <p className="text-gray-700 mb-4">{tester.background}</p>
-                <div className="border-t pt-4">
-                  <p className="text-xs font-semibold text-gray-500 uppercase mb-2">Tests</p>
+              <div key={index} className="bg-white rounded-xl border-2 border-gray-200 p-10 hover:shadow-lg transition max-w-2xl w-full">
+                <div className="text-7xl mb-6 text-center">{tester.image}</div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-2 text-center">{tester.name}</h3>
+                <p className="text-blue-600 font-semibold mb-3 text-center text-lg">{tester.role}</p>
+                <p className="text-gray-500 mb-6 text-center">{tester.location}</p>
+                <div className="mb-6 space-y-4">
+                  {Array.isArray(tester.background) ? (
+                    tester.background.map((paragraph, i) => (
+                      <p key={i} className="text-gray-700 text-lg leading-relaxed">{paragraph}</p>
+                    ))
+                  ) : (
+                    <p className="text-gray-700 text-lg leading-relaxed">{tester.background}</p>
+                  )}
+                </div>
+                <div className="border-t pt-6">
+                  <p className="text-sm font-semibold text-gray-500 uppercase mb-3">Tests</p>
                   <div className="flex flex-wrap gap-2">
                     {tester.interests.map((interest, i) => (
-                      <span key={i} className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">
+                      <span key={i} className="text-sm bg-blue-50 text-blue-700 px-3 py-2 rounded">
                         {interest}
                       </span>
                     ))}
                   </div>
                 </div>
-                <a href={tester.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block">
-                  <button className="bg-purple-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-purple-700 transition text-sm">
-                    View Profile
-                  </button>
-                </a>  
+                <div className="text-center mt-6">
+                  <a href={tester.link} target="_blank" rel="noopener noreferrer">
+                    <button className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+                      View Profile
+                    </button>
+                  </a>
+                </div>
               </div>
             ))}
           </div>
@@ -99,7 +113,7 @@ export default function MeetTheTesters() {
             </div>
             <div className="mt-6 text-center">
               <a href="https://britt.fillout.com/t/pPyrN5Crzjus" target="_blank">
-                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                <button className="bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
                   Apply to be a tester
                 </button>
               </a>
@@ -148,7 +162,7 @@ export default function MeetTheTesters() {
               <h4 className="text-white font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="#" className="hover:text-white">About</a></li>
-                <li><a href="#" className="hover:text-white">Contact</a></li>
+                <li><a href="mailto:brittanyjoiner15@gmail.com" className="hover:text-white">Contact</a></li>
                 <li><a href="#" className="hover:text-white">Terms of Service</a></li>
                 <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
               </ul>

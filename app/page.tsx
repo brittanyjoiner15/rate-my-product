@@ -28,13 +28,13 @@ export default function Home() {
           <div className="flex gap-4 justify-center">
             <a href="https://buy.stripe.com/fZu00jaVScL35xe5JQe7m0r">
               <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                Submit Your Product
+                Get feedback in 48 hours
               </button>
             </a>
-            <button className="bg-white text-gray-700 px-8 py-3 rounded-lg font-semibold border-2 border-gray-300 hover:bg-gray-50 transition">
-              View Pricing
-            </button>
           </div>
+          <p className="text-gray-600 mt-4 text-lg">
+            <em>Early-January price: $99 one time fee. Limited slots.</em>
+          </p>
         </div>
       </section>
 
@@ -51,7 +51,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold mb-4">Send us your product</h3>
               <p className="text-gray-600">
-                Share a link and tell us who you're building for. No scripts, no recruiting, no long intake forms.
+                Once you pay, you'll be directed to a link to tell us who you're building for and instructions to test it out. No scripts, no recruiting, no long intake forms.
               </p>
             </div>
             <div className="text-center">
@@ -69,7 +69,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold mb-4">Get actionable feedback</h3>
               <p className="text-gray-600">
-                Screen recordings + written critique focused on UX, clarity, friction, onboarding, and what breaks trust.
+                Screen recordings + written critique focused on UX, clarity, friction, onboarding, and what breaks trust... in your inbox within 48 hours.
               </p>
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function Home() {
                 Because you don't need a $20k research report written by product people.
                 You need to know what actual users trip over so you can ship fixes this week.{' '}
                 <a href="/meet-the-testers" className="text-blue-600 hover:text-blue-700 font-semibold underline">
-                  Meet the testers →
+                  Meet your reviewer →
                 </a>
               </p>
               <ul className="space-y-4">
@@ -325,7 +325,7 @@ export default function Home() {
               <h4 className="text-white font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="#" className="hover:text-white">About</a></li>
-                <li><a href="#" className="hover:text-white">Contact</a></li>
+                <li><a href="mailto:brittanyjoiner15@gmail.com" className="hover:text-white">Contact</a></li>
                 <li><a href="#" className="hover:text-white">Terms of Service</a></li>
                 <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
               </ul>
