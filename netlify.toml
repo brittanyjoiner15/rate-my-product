@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # Tell Netlify's secrets scanner to ignore NEXT_PUBLIC_ variables
+  # These are intentionally exposed in the client-side bundle
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_MIXPANEL_TOKEN"
